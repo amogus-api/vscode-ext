@@ -1,0 +1,74 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SUS",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#docstrings" },
+		{ "include": "#regex" },
+		{ "include": "#strings" },
+		{ "include": "#punctuation" },
+		{ "include": "#duration" },
+		{ "include": "#number" },
+		{ "include": "#bool" },
+		{ "include": "#statements" },
+		{ "include": "#keywords" },
+		{ "include": "#type_modifiers" },
+		{ "include": "#fields" },
+		{ "include": "#types" }
+	],
+	"repository": {
+		"number": {
+			"name": "constant.numeric",
+			"match": "[0-9]+"
+		},
+		"punctuation": {
+			"name": "punctuation",
+			"match": "[.,;:]"
+		},
+		"comments": {
+			"match": "#.*$",
+			"name": "comment.line"
+		},
+		"docstrings": {
+			"name": "comment.block.documentation",
+			"begin": "@>",
+			"end": "<@"
+		},
+		"regex": {
+			"name": "string.regexp",
+			"match": "/.+/[ims]{0,3}"
+		},
+		"strings": {
+			"name": "string",
+			"match": "(\".*\")|('.*')"
+		},
+		"statements": {
+			"name": "meta.preprocessor.string",
+			"begin": "\\b(set|include)\\b",
+			"beginCaptures": { "0": { "name": "keyword" } },
+			"end": "\n",
+			"patterns": [{ "name": "string", "match": ".*" }]
+		},
+		"keywords": {
+			"name": "keyword",
+			"match": "\\b(enum|bitfield|confirmation|entity|opt|cache|hard|soft|method|staticmethod|globalmethod|compound|request|response|returns|errors|confirmations|states|ratelimit|every)\\b"
+		},
+		"bool": {
+			"name": "constant.language",
+			"match": "\\b(false|true)\\b"
+		},
+		"duration": {
+			"name": "constant.numeric",
+			"match": "\\b([0-9]+(y|mo|d|h|m|s|ms))\\b"
+		},
+		"fields": {
+			"name": "meta.attribute",
+			"match": "\\b[a-z][a-z_]*\\b"
+		},
+		"types": {
+			"name": "entity.name.class",
+			"match": "\\b[A-Z][A-Za-z]*\\b"
+		}
+	},
+	"scopeName": "source.sus"
+}

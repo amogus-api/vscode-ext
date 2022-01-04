@@ -1,0 +1,29 @@
+{
+    "name": "suslang",
+    "publisher": "portasynthinca3",
+    "displayName": "SusLang",
+    "description": "Script for Ubiquitous Structures support for Visual Studio Code",
+    "version": "0.0.3",
+    "repository": {
+        "url": "https://github.com/portasynthinca3/amogus"
+    },
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sus",
+            "aliases": ["SUS", "sus"],
+            "extensions": [".sus"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sus",
+            "scopeName": "source.sus",
+            "path": "./syntaxes/sus.tmLanguage.json"
+        }]
+    }
+}
