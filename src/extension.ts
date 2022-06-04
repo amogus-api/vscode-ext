@@ -27,7 +27,7 @@ export function activate(context: ExtensionContext) {
 	client = new LanguageClient(
 		"suslang",
 		"SUS Language Server",
-		() => startServer(false),
+		() => startServer(true),
 		clientOptions
 	);
 

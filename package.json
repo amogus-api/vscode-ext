@@ -3,7 +3,7 @@
     "publisher": "portasynthinca3",
     "displayName": "SusLang",
     "description": "Script for Ubiquitous Structures support for Visual Studio Code",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "scripts": {
         "build": "tsc --esModuleInterop --outDir out src/*.ts"
     },
